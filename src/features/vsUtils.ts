@@ -53,24 +53,6 @@ export const toSeverity = (severity: ValeSeverity): coc.DiagnosticSeverity => {
 };
 
 /**
- * Create an action title from a given alert and suggestion.
- *
- * @param alert The Vale-created alert
- * @param suggestion The vsengine-calculated suggestion
- */
-// TODO: Handle spelling
-export const toTitle = (alert: IValeErrorJSON): string => {
-  switch (alert.Action.Name) {
-    case 'remove':
-      return "Remove '" + alert.Match + "'";
-    case 'replace':
-      return "Replace with '" + alert.Action.Params[0] + "'";
-  }
-  // In theory this should never be triggered
-  return 'No suggestion found';
-};
-
-/**
  * Convert a Vale error to a code diagnostic.
  *
  * @param alert The alert to convert
@@ -126,10 +108,3 @@ export const buildCommand = (exe: string, config: string, path: string): Array<s
   command = command.concat(['--output', 'JSON', path]);
   return command;
 };
-
-export const getReadabilityProblemLocation = (): ValeReadabilityProblemLocation => {
-  const configuration = coc.workspace.getConfiguration();
-
-  return configuration.get<ValeReadabilityProblemLocation>('vale.readabilityProblemLocation', 'status');
-};
-
