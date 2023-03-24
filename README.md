@@ -1,23 +1,16 @@
 # coc-vale
 
+[Vale](https://vale.sh) linting for [coc.nvim](https://github.com/neoclide/coc.nvim).
 
+Make sure you have Vale installed and configured.
+
+Heavily adapted from [vale-vscode](https://github.com/errata-ai/vale-vscode).
 
 ## Install
 
 `:CocInstall coc-vale`
 
-## Keymaps
-
-`nmap <silent> <C-l> <Plug>(coc-coc-vale-keymap)`
-
-## Lists
-
-`:CocList demo_list`
-
 ## License
 
 MIT
 
----
-
-> This extension is built with [create-coc-extension](https://github.com/fannheyward/create-coc-extension)

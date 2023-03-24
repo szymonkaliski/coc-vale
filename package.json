@@ -42,21 +42,33 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "coc-vale configuration",
+      "title": "vale configuration",
       "properties": {
-        "coc-vale.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable coc-vale extension"
+        "vale.valeCLI.config": {
+          "scope": "resource",
+          "type": "string",
+          "default": null,
+          "description": "Absolute path to a Vale config file. If not specified, the default search process will be used (relative to the current file)."
+        },
+        "vale.valeCLI.path": {
+          "scope": "resource",
+          "type": "string",
+          "default": null,
+          "markdownDescription": "Absolute path to the Vale binary. The predefined [`${workspaceFolder}`](https://code.visualstudio.com/docs/editor/variables-reference#_predefined-variables) variable can be used to reference a non-global binary. (**NOTE**: On Windows you can use '/' and can omit `.cmd` in the path value.)"
+        },
+        "vale.valeCLI.minAlertLevel": {
+          "scope": "resource",
+          "type": "string",
+          "default": "inherited",
+          "enum": [
+            "inherited",
+            "suggestion",
+            "warning",
+            "error"
+          ]
         }
       }
-    },
-    "commands": [
-      {
-        "command": "coc-vale.Command",
-        "title": "coc-vale command title"
-      }
-    ]
+    }
   },
   "dependencies": {
     "which": "^3.0.0"
