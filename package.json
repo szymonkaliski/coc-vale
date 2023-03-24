@@ -5,6 +5,10 @@
   "author": "Szymon Kaliski <hi@szymonkaliski.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/szymonkaliski/coc-vale"
+  },
   "keywords": [
     "coc.nvim"
   ],
